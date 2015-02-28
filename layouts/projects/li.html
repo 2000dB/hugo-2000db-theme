@@ -1,0 +1,12 @@
+{{ $baseurl := .Site.BaseUrl }}
+
+
+<li class="projectEntry">
+  <a href="/{{ .Section }}/{{ .Title }}" class="link">
+    <img src="{{ $baseurl }}/media/{{ .Title }}/{{ .Params.thumbnail}}" />
+  </a>
+</li>
+
+
+
+
