@@ -1,11 +1,6 @@
-loadContent = function(href) {
-}
-
-
 (function ($) {
     "use strict";
     $(document).ready(function(){
-
 
         // Hide / Show menu on scroll
         $("#sidebar" ).scroll(function() {
@@ -15,25 +10,37 @@ loadContent = function(href) {
 
         });
 
-
-        // on click, load entry - add that this happens on load too
         $(function() {
-
-            var $main = $("main"),
+            var $main = $("main");
+            var $posts = $("#postItems"),
 
             init = function() {
-                var href = $("latest").attr("href");
-                $main.load(href + ' #project');
+                //var href = $("latest").attr("href");
+                //$main.load(href + ' #project');
+                                
             };
-
             init();
 
-            $(".link").click(function() {
-                var href = $(this).attr("href");
-                history.pushState({}, '', href);
-                $main.load(href + ' #project');
-                return false;
-            });
+            // Entry links
+            // $(".projectEntry a").click(function() {
+            //     var href = $(this).attr("href");
+            //     history.pushState({}, '', href);
+            //     $main.load(href + ' #project');
+            //     return false;
+            // });
+
+            // // Menu links
+            // $("#buttons a").click(function() {
+            //     var href = $(this).attr("href");
+            //     history.pushState({}, '', href);
+            //     if(href.indexOf("/info") >= 0) {
+            //         $main.load(href + ' #project');
+            //     } else {
+            //         $posts.load(href + ' #menu');
+            //     }
+            //     return false;
+            // });
+
         });
         
     });

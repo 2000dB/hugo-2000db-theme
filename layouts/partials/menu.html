@@ -1,0 +1,40 @@
+{{ $baseurl := .Site.BaseUrl }}
+
+
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      <div id="buttons">
+        <div class="timeline"></div>
+        <a href="{{ $baseurl }}/info">
+          <div class="buttonTop" id="nameButton">Vincent de Belleval</div>
+        </a>
+        <a href="{{ $baseurl }}/project/">
+          <div class="buttonTop" id="projectsButton">Projects</div>
+        </a>
+        <a href="{{ $baseurl }}/research/">
+          <div class="buttonTop" id="researchButton">Research</div>
+        </a>
+        <a href="{{ $baseurl }}/reference/">
+        <div class="buttonTop" id="referencesButton">References</div>
+        </a>
+      </div>
+
+      <div id="posts">
+        <div class="timeline"></div>
+        <div id="postItems">
+          
+          <ul id="menu">
+            {{ range .Site.Pages }}
+            <!--<li>{{ .Section  }}</li>-->
+            {{ if or (eq .Section (lower $.Title)) (eq .Section $.Section) }}
+            {{ .Render "li" }} 
+            {{ end }}
+            {{ end }}
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+

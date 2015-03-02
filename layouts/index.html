@@ -1,11 +1,14 @@
+{{ $baseurl := .Site.BaseUrl }}
+
 {{ partial "header.html" . }}
+{{ partial "menu.html" . }}
 
 <main>
   <div id="jsDebug"></div>
-  <!--<iframe id="contentFrame" src="./projects/momentum/index.html"></iframe>-->
+  {{ range first 1 (where .Site.Pages "Section" "project") }}
+  {{ .Render "content" }}
+  {{ end }}
 </main>
-
-<latest href="{{ .Site.Params.displayFirst }}" />
 
 {{ partial "footer.html" . }}
 
