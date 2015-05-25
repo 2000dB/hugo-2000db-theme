@@ -1,0 +1,12 @@
+{{ $baseurl := .Site.BaseUrl }}
+
+{{ partial "header.html" . }}
+{{ partial "menu.html" . }}
+
+<main>
+<section id="project">
+  {{ .Render "content" }}
+</section>
+</main>
+
+{{ partial "footer.html" . }}
