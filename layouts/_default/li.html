@@ -1,6 +1,6 @@
 {{ $baseurl := .Site.BaseUrl }}
 <li class="projectEntry">
-  <a href="{{ $baseurl }}/{{ .Section }}/{{ .Title }}" class="link">
+  <a href="{{ .Permalink }}" class="link">
     {{ if eq .Params.thumbnail "" }}
     {{ .Title }}
     {{ else }}
