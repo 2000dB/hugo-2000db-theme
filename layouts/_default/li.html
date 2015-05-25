@@ -1,8 +1,15 @@
 {{ $baseurl := .Site.BaseUrl }}
+
 <li class="projectEntry">
   <a href="{{ .Permalink }}" class="link">
-    {{ if eq .Params.thumbnail "" }}
-    {{ .Title }}
+    {{ if eq .Params.thumbnail "" }} <!-- if there's an image, then use that -->
+    <div class="textWrapper">
+      {{ if ne .Summary "" }} <!-- otherwise if there's a summary, use that -->
+      {{ .Summary }}
+      {{ else }}
+      {{ .Title }} <!-- otherwise just show the title -->
+      {{ end }}
+    </div>
     {{ else }}
     <img src="{{ $baseurl }}/media/{{ .Title }}/{{ .Params.thumbnail}}" />    
     {{ end }}

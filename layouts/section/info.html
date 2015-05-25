@@ -25,7 +25,15 @@
 
 <main>
   {{ range first 1 .Data.Pages }}
-  {{ .Render "content" }}
+    <section id="project">
+    <h1 id="title">{{ .Title }}</h1>
+    <div>
+      <article id="content">
+        {{ .Content }}
+        {{ .Section }}
+      </article>
+    </div>
+  </section>
   {{ end }}
 </main>
 
