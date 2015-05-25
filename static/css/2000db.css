@@ -6,7 +6,7 @@
 
 
 body {
-    font-family:"Maison Neue Light", Helvetica, Arial, sans-serif;
+    font-family:"Maison Neue Book", Helvetica, Arial, sans-serif;
     font-weight:100;
     font-style:normal;
     overflow: auto;
@@ -75,12 +75,27 @@ body {
     background-color: #eee;
 }
 
+
+/* CONTENT PAGES */
+
 #posts {
     position: relative;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     float: left;
     z-index: 1;
+}
+
+#postFoot
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2%;
+    border-top: 1px solid black;    
+    background-color: #eeeeee;
+    z-index: 10;
 }
 
 .timeline {
@@ -92,6 +107,7 @@ body {
     z-index: 2;
     background-color: black;
 }
+
 
 #postItems {
     position: relative;
@@ -121,12 +137,24 @@ li.projectEntry {
 }
 
 li.projectEntry img{
-    max-width: 80%;
+    max-width: 60%;
 }
 
 li.researchEntry {
 
 }
+
+.year
+{
+    width: 10%;
+    text-align: center;
+    border: 1px solid black;
+    padding: 2% 0;
+    z-index: 10px;
+    color: black;
+    Background-color: white;
+}
+
 
 
 /* CONTENT PAGES */
@@ -142,14 +170,15 @@ main {
     border-left: 1px solid black;
     overflow: auto;
 
-    background: #eeeeee;
-    background: -moz-linear-gradient(left,  #eeeeee 0%, #ffffff 33%);
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(33%,#ffffff));
-background: -webkit-linear-gradient(left,  #eeeeee 0%,#ffffff 33%);
-background: -o-linear-gradient(left,  #eeeeee 0%,#ffffff 33%);
-background: -ms-linear-gradient(left,  #eeeeee 0%,#ffffff 33%);
-background: linear-gradient(to right,  #eeeeee 0%,#ffffff 33%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=1 );
+    background: #ffffff;
+    /* background: #eeeeee; */
+    /* background: -moz-linear-gradient(left,  #eeeeee 0%, #ffffff 33%); */
+    /* background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(33%,#ffffff)); */
+    /* background: -webkit-linear-gradient(left,  #eeeeee 0%,#ffffff 33%); */
+    /* background: -o-linear-gradient(left,  #eeeeee 0%,#ffffff 33%); */
+    /* background: -ms-linear-gradient(left,  #eeeeee 0%,#ffffff 33%); */
+    /* background: linear-gradient(to right,  #eeeeee 0%,#ffffff 33%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=1 ); */
 }
 
 main::-webkit-scrollbar {

@@ -1,6 +1,5 @@
 {{ $baseurl := .Site.BaseUrl }}
 
-
 <body>
   <div id="wrapper">
     <div id="sidebar">
@@ -19,22 +18,4 @@
         <div class="buttonTop" id="referencesButton">References</div>
         </a>
       </div>
-
-      <div id="posts">
-        <div class="timeline"></div>
-        <div id="postItems">
-          
-          <ul id="menu">
-            {{ range .Site.Pages }}
-            <!--<li>{{ .Section  }}</li>-->
-            {{ if or (eq .Section (lower $.Title)) (eq .Section $.Section) }}
-            {{ .Render "li" }} 
-            {{ end }}
-            {{ end }}
-
-          </ul>
-        </div>
-      </div>
-    </div>
-
 

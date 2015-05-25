@@ -3,12 +3,33 @@
 {{ partial "header.html" . }}
 {{ partial "menu.html" . }}
 
+<div id="posts">
+  <div class="timeline"></div>
+  <div id="postItems">
+        <ul id="menu">
+          {{ range .Site.Pages.GroupBy "Section"}}
+          {{ if eq .Key $.Section }}
+          {{ range (.Pages.GroupByParam "year").Reverse }}
+          <li class="year">{{ .Key }}</li>
+          {{ range .Pages }}
+          {{ .Render "li" }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </ul>
+  </div>
+</div> <!--  posts  -->
+</div> <!-- sidebar -->
+
 <main>
   <section id="project">
     <h1 id="title">{{ .Title }}</h1>
+    <h2>url = {{ .Path }}</h2>
     <div>
       <article id="content">
         {{ .Content }}
+        {{ .Section }}
       </article>
     </div>
   </section>
